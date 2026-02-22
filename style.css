@@ -1,0 +1,54 @@
+:root{
+  --speed:1;
+  --time: calc(0.49s * var(--speed));
+  --ease: cubic-bezier(0.24,0.45,0.20,1.00);
+
+  --icon:64px;
+  --radius:18px;
+}
+
+body{
+  margin:0;
+  background:#111;
+  height:100vh;
+  display:grid;
+  place-items:center;
+  font-family:sans-serif;
+  color:white;
+}
+
+.phone{
+  width:320px;
+  height:640px;
+  background:black;
+  border-radius:40px;
+  overflow:hidden;
+  position:relative;
+}
+
+.screen{
+  position:absolute;
+  inset:0;
+  display:grid;
+  place-items:center;
+  background:black;
+  transition:all var(--time) var(--ease);
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:18px;
+  padding:20px;
+}
+
+.icon{
+  width:var(--icon);
+  height:var(--icon);
+  background:#1c1c1c;
+  border-radius:var(--radius);
+  display:grid;
+  place-items:center;
+  font-size:11px;
+  transition:transform var(--time) var(--ease), opacity var(--time);
+}
